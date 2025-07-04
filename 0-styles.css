@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* HERO */
+.hero {
+  background-image: url(images/headphones_hero_1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2vw 15vw;
+  position: relative;
+}
+
+#menu-toggle {
+  display: none;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.hamburger div {
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.hamburger div:nth-child(1),
+.hamburger div:nth-child(3) {
+  width: 100%;
+}
+
+.hamburger div:nth-child(2) {
+  width: 70%;
+  align-self: flex-start;
+}
+
+.hero-logo {
+  width: 220px;
+  height: auto;
+  
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.hero-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 13vw 10vw;
+}
+
+.hero-items h1 {
+  font-size: 45px;
+  color: white;
+}
+
+.hero-items .p1 {
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+}
+
+.hero-items button {
+  padding: 12px 40px;
+  border: none;
+  background-color: #FF6565;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+  font-weight: 900;
+  margin-top: 3vw;
+}
+
+.hero-items button:hover {
+  background-color: hwb(0 36% 11%);
+}
+
+.hero-items .p2 {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  width: 40vw;
+  margin-top: 3vw;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  header {
+    padding: 3vw 10vw;
+  }
+  .hero-items h1 {
+    margin-top: 15vw;
+  }
+  .hero-items button {
+    margin-top: 5vw;
+  }
+  .hero-items .p2 {
+    margin-top: 5vw;
+    width: 70vw;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 3vw 10vw;
+  }
+  .hero-items h1 {
+    font-size: 35px;
+    margin-top: 25vw;
+  }
+  .hero-items .p1 {
+    font-size: 18px;
+  }
+  .hero-items button {
+    margin-top: 7vw;
+  }
+  .hero-items .p2 {
+    margin-top: 7vw;
+    font-size: 17px;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 5vw;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    margin-top: 5vw;
+  }
+
+  #menu-toggle:checked ~ nav {
+    max-height: 500px;
+  }
+  nav a {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+  header {
+    padding: 5vw 5vw;
+  }
+
+  .hero-logo {
+  width: 220px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  
+  }
+  .hero-items h1 {
+    text-align: center;
+  }
+  .hero-items .p1{
+    width: 300px;
+    text-align: center;
+  }
+  .hero-items .p2{
+    width: 350px;
+    text-align: center;
+  }
+}
